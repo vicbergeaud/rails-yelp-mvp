@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+  <h1>Restaurants</h1>
+    <table class="table">
+      <thead>
+        <tr>  
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Category</th>
+            <th scope="col"></th>
+       </tr>
+      </thead>
+      <tbody>
+          <% @restaurants.each do |restaurant| %>
+            <tr>
+              <td><%= restaurant.name %></td>
+              <td><%= restaurant.address %></td>
+              <td><%= restaurant.category %></td>
+              <td><%= link_to 'Show', restaurant, class: 'pull-right btn btn-primary' %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+
+      <br>
+
+      <%= link_to 'New Restaurant', new_restaurant_path, class: 'pull-right btn btn-primary' %>
+
+    </div>
+  </div>
+</div>
